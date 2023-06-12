@@ -1,16 +1,16 @@
-/* 
+/*
  * Wavelet denoise GIMP plugin
- * 
+ *
  * plugin.h
  * Copyright 2008 by Marco Rossini
- * 
+ *
  * Implements the wavelet denoise code of UFRaw by Udi Fuchs
  * which itself bases on the code by Dave Coffin
- * 
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2
  * as published by the Free Software Foundation.
- * 
+ *
  */
 
 #ifndef __PLUGIN_H__
@@ -44,10 +44,10 @@
 
 void query (void);
 void run (const gchar * name, gint nparams, const GimpParam * param,
-		 gint * nreturn_vals, GimpParam ** return_vals);
+          gint * nreturn_vals, GimpParam ** return_vals);
 void wavelet_denoise (float *fimg[3], unsigned int width,
-			     unsigned int height, float threshold, double low,
-			     float a, float b);
+                      unsigned int height, float threshold, double low,
+                      float a, float b);
 void denoise (GimpDrawable * drawable, GimpPreview * preview);
 void set_rgb_mode (GtkWidget * w, gpointer data);
 void set_lab_mode (GtkWidget * w, gpointer data);
@@ -74,16 +74,16 @@ extern GimpPlugInInfo PLUG_IN_INFO;
 
 typedef struct
 {
-  double gray_thresholds[2];
-  double gray_low[2];
-  double colour_thresholds[4];
-  double colour_low[4];
-  guint colour_mode;
-  gint preview_channel;
-  gboolean preview_mode;
-  gboolean preview;
-  float times[3];
-  gint winxsize, winysize;
+    double gray_thresholds[2];
+    double gray_low[2];
+    double colour_thresholds[4];
+    double colour_low[4];
+    guint colour_mode;
+    gint preview_channel;
+    gboolean preview_mode;
+    gboolean preview;
+    float times[3];
+    gint winxsize, winysize;
 } wavelet_settings;
 
 extern wavelet_settings settings;
